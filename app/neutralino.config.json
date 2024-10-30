@@ -1,0 +1,49 @@
+{
+	"$schema": "https://raw.githubusercontent.com/neutralinojs/neutralinojs/main/schemas/neutralino.config.schema.json",
+	"applicationId": "js.neutralino.sample",
+	"version": "1.0.0",
+	"defaultMode": "window",
+	"port": 0,
+	"documentRoot": "/resources/",
+	"url": "/",
+	"enableServer": true,
+	"enableNativeAPI": true,
+	"tokenSecurity": "one-time",
+	"enableExtensions": true,
+	"logging": {
+		"enabled": true,
+		"writeToLogFile": true
+	},
+	"nativeBlockList": [],
+	"modes": {
+		"window": {
+			"width": 800,
+			"height": 500,
+			"minWidth": 400,
+			"minHeight": 200,
+			"center": true,
+			"fullScreen": false,
+			"alwaysOnTop": false,
+			"icon": "/resources/icons/appIcon.png",
+			"enableInspector": true,
+			"transparent": true,
+			"borderless": false,
+			"maximize": false,
+			"hidden": false,
+			"resizable": true,
+			"exitProcessOnClose": true
+		}
+	},
+	"cli": {
+		"binaryName": "neutralino",
+		"resourcesPath": "/resources/",
+		"extensionsPath": "/extensions/",
+		"clientLibrary": "/resources/js/neutralino.js",
+		"binaryVersion": "5.4.0",
+		"clientVersion": "5.4.0"
+	},
+	"extensions": [{
+		"id": "extVibrancy",
+		"commandWindows": "${NL_PATH}\\extensions\\extVibrancy\\bin.exe"
+	}]
+}
