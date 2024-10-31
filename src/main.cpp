@@ -4,10 +4,10 @@
 #include <fstream>
 #include <stdio.h>
 #include "lib/json/json.hpp"
-#include "uuid.h"
+#include "uuid.hpp"
 
 #if _WIN32
-#include "vibrancyWindows.h"
+#include "vibrancyWindows.hpp"
 #elif __linux__
 
 #elif __APPLE__
@@ -27,7 +27,16 @@ int main()
     cout << "Waiting for stdin..." << endl;
     string stdInput = "";
     cin >> stdInput;
-    json data = json::parse(stdInput);
+    json data;
+    try
+    {
+        data = json::parse(stdInput);
+    }
+    catch (json::parse_error& error)
+    {
+        cout << "Parse error at byte: " << error.byte << endl;
+        exit(0);
+    }
 
     string idExtension = data["nlExtensionId"];
     string port = data["nlPort"];

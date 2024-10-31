@@ -36,6 +36,9 @@ md ..\app\extensions\extVibrancy
 g++.exe -std=c++11 -D_WEBSOCKETPP_CPP11_STL_ -DASIO_STANDALONE -D_WEBSOCKETPP_CPP11_THREAD_ -Os -I.\lib\ -c main.cpp -o obj\main.o
 g++.exe -o ..\app\extensions\extVibrancy\bin.exe obj\main.o -s -static -lws2_32
 ```
+
+Of course you can also get the compiled binary from [Releases](https://github.com/scanline/neutralinojs-ext-vibrancy/releases).
+
 Now go back to the application and start it:
 ```batchfile
 cd ../app
